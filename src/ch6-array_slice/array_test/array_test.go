@@ -21,3 +21,11 @@ func TestArray(t *testing.T) {
 
 	//}
 }
+
+func TestArrayTravel(t *testing.T) {
+	var a = [...]int{2, 4, 5, 6}
+	var idx, e int
+	for idx, e = range a {
+		t.Log(idx, e)
+	}
+}
