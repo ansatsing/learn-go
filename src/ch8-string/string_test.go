@@ -35,3 +35,11 @@ func TestStringUnicodeUtf8(t *testing.T) {
 	t.Logf("'中'的UTF8: %x", s)                   //'中'的UTF8: e4b8ad
 
 }
+
+//rune 就是 unicode
+func TestString2Rune(t *testing.T) {
+	s := "中华人民共和国"
+	for idx, vle := range s {
+		t.Logf("index:[%d]-{%[2]c  %[2]d %[2]x}", idx, vle)
+	}
+}
