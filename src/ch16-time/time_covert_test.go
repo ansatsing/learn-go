@@ -1,6 +1,7 @@
 package ch16_time
 
 import (
+	"crypto/sha256"
 	"fmt"
 	"testing"
 	"time"
@@ -14,4 +15,10 @@ func TestInt642FormatStringTime(t *testing.T) {
 	//fmt.Println(timeStamp)
 	formatStrDte := time.Unix(timeStamp, 0).Format(DATETIME_LAYOUT)
 	fmt.Println(formatStrDte)
+}
+
+func TestSha(t *testing.T) {
+	str := "ansatsing"
+	hsh := sha256.Sum256([]byte(str))
+	fmt.Printf("%x\n,%s\n,%d\n", hsh, hsh, hsh)
 }
