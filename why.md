@@ -78,3 +78,5 @@ func TestOnce(t *testing.T)  {
 	time.Sleep(time.Second*1)
 }
 ```
+
+## 类型推断、变量重声明、可重名变量、类型断言、类型转换、别名类型和潜在类型
