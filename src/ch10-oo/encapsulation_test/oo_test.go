@@ -15,11 +15,13 @@ type Employee struct {
 
 //每执行一次，就需要拷贝一份，如果出于数据安全考虑，推荐此写法
 func (e Employee) String() string {
+	e.name = "(e Employee)"
 	return fmt.Sprintf("Employee[id:%s,name:%s,age:%d],address:%x", e.id, e.name, e.age, unsafe.Pointer(&e))
 }
 
 //无需拷贝 ，都是同一份，如果不更改数据，推荐此写法
 func (e *Employee) StringOfPointer() string {
+	e.name = "(*e Employee)"
 	return fmt.Sprintf("Employee[id:%s,name:%s,age:%d],address:%x", e.id, e.name, e.age, unsafe.Pointer(e))
 }
 
@@ -42,5 +44,7 @@ func TestEmployeeBehavior(t *testing.T) {
 	e := Employee{"001", "antsing", 35}
 	t.Logf("Employee[id:%s,name:%s,age:%d],address:%x", e.id, e.name, e.age, unsafe.Pointer(&e))
 	t.Log(e.String())
+	t.Log(e)
 	t.Log(e.StringOfPointer())
+	t.Log(e)
 }
