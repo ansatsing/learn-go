@@ -16,7 +16,9 @@ func TestChannel(t *testing.T) {
 func TestChannel1(t *testing.T) {
 	chn := make(chan int, 1) //缓存通道
 	chn <- 10
+
 	fmt.Println(<-chn)
+	chn <- 11
 }
 
 //fatal error: all goroutines are asleep - deadlock!
