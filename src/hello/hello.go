@@ -22,7 +22,7 @@ func IntToHex(num int64) []byte {
 func main() {
 	data1 := []byte("I like donuts")
 	data2 := []byte("I like donutsca07ca")
-	targetBits := 16
+	targetBits := 4
 	target := big.NewInt(1)
 	fmt.Println(target)
 	target.Lsh(target, uint(256-targetBits))

@@ -41,5 +41,4 @@ func TestSliceShareMemory(t *testing.T) {
 	t.Log(q2, len(q2), cap(q2))
 	t.Log(summer, len(summer), cap(summer))
 	t.Log(month, len(month), cap(month))
-
 }
