@@ -100,3 +100,11 @@ func RandomSource(count int) <-chan int {
 	}()
 	return out
 }
+
+func MergeN(chns ...<-chan int) <-chan int {
+	if len(chns) == 1 {
+		return chns[0]
+	}
+	m := len(chns) / 2
+	return Merge(MergeN(chns[:m]...), MergeN(chns[m:]...))
+}
